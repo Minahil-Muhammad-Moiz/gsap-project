@@ -1,1 +1,1 @@
-First ThreeJs App.
+# First ThreeJs Project.
