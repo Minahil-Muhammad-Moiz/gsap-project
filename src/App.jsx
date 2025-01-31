@@ -3,24 +3,38 @@ import gsap from 'gsap'
 import React, { useRef, useState } from 'react'
 
 const App = () => {
-  const [circle, setcircle] = useState(0);
-  const random = gsap.utils.random(-500, 500, 10)
+  const logoRef = useRef()
+  const navlistRef = useRef()
 
-  const { contextSafe } = useGSAP()
-  const boxRef = useRef()
-  contextSafe(() => {
-    gsap.to(boxRef.current, {
-      x: circle,
-      rotate: 360,
-      duration: 2,
+  const tl = gsap.timeline()
+
+  useGSAP(() => {
+    tl.from(logoRef.current, {
+      y: -30,
+      opacity: 0,
+      duration: 1,
+      delay: 0.5
     })
-  }, [circle])
+    tl.from('li', {
+      y: -30,
+      opacity: 0,
+      duration: 1,
+      delay:0.2,
+      stagger: 1
+    })
+  })
+
+
   return (
-    <main className='h-full w-full border flex items-center justify-center'>
-      <div ref={boxRef} className='rounded-full bg-red-500 w-[200px] h-[200px]'></div>
-      <button onClick={() => {
-        setcircle(random)
-      }} className='py-2 px-6 rounded-full bg-red-300 z-10'>Move</button>
+    <main className='h-full w-full text-white flex items-center justify-center'>
+      <nav className='w-full flex justify-between  items-center py-4 px-10'>
+        <h1 ref={logoRef} className='text-xl font-bold px-10'>Portfolio</h1>
+        <ul className='flex gap-10 text-lg font-semibold px-10'>
+          <li>About</li>
+          <li>Project</li>
+          <li>Contact</li>
+        </ul>
+      </nav>
     </main>
   )
 }
