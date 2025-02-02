@@ -26,7 +26,7 @@ const HorizontalScroll = () => {
 
     return (
         <>
-            <div ref={page3} id="page3" className='w-full relative bg-orange-200 transform -skew-10'>
+            <div ref={page3} id="page3" className='w-full relative bg-orange-200 transform -skew-3'>
                 <h1 className='text-[10vw] font-black text-black whitespace-nowrap'>EXPERTISE ** EXPERTISE ** EXPERTISE ** </h1>
             </div>
         </>
