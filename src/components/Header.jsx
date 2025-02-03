@@ -41,7 +41,7 @@ const Header = () => {
                     <li>Contact</li>
                 </ul>
             </nav>
-            <div ref={headRef} className='w-full text-center absolute top-[50%] left-[50%] -translate-y-[50%] -translate-x-[50%] text-6xl font-bold group hover:italic hover:font-extralight cursor-pointer hover:text-amber-300 '>First GSAP Tutorial<div className='bg-black w-full h-1 border-black border absolute top-[50%] -translate-y-[50%] group-hover:block hidden'></div></div>
+            <div ref={headRef} className='hover:w-full text-center absolute top-[50%] left-[50%] -translate-y-[50%] -translate-x-[50%] text-6xl font-bold group hover:italic hover:font-extralight cursor-pointer hover:text-amber-300 '>First GSAP Tutorial<div className='bg-black w-full h-1 border-black border absolute top-[50%] -translate-y-[50%] group-hover:block hidden'></div></div>
         </header>
     )
 }
