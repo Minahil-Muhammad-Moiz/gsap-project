@@ -6,6 +6,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import HorizontalScroll from './components/HorizontalScroll';
 import SVGanimation from './components/SVGanimation';
 import ImageOverlay from './components/ImageOverlay';
+import TextAnimation from './TextAnimation';
 
 const App = () => {
   const [cursorText, setCursorText] = useState('')
@@ -25,7 +26,8 @@ const App = () => {
       <Header />
       <main className='h-screen w-full text-white'>
         <SVGanimation />
-        <ImageOverlay setCursorText={setCursorText}/>
+        <ImageOverlay setCursorText={setCursorText} />
+        <TextAnimation />
       </main>
       <HorizontalScroll />
     </div>
