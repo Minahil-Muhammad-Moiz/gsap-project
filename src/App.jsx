@@ -7,6 +7,7 @@ import HorizontalScroll from './components/HorizontalScroll';
 import SVGanimation from './components/SVGanimation';
 import ImageOverlay from './components/ImageOverlay';
 import TextAnimation from './TextAnimation';
+import Marquee from './components/Marquee';
 
 const App = () => {
   const [cursorText, setCursorText] = useState('')
@@ -26,6 +27,7 @@ const App = () => {
       <Header />
       <main className='h-screen w-full text-white'>
         <SVGanimation />
+        <Marquee />
         <ImageOverlay setCursorText={setCursorText} />
         <TextAnimation />
       </main>
