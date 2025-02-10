@@ -22,16 +22,13 @@ const App = () => {
   }
 
   return (
-    <div onMouseMove={handleCursor}>
-      <div id='cursor' className={`z-40 w-4 h-4 rounded-full fixed bg-amber-400 ${cursorText && 'w-auto p-2 h-auto !bg-amber-100 text-black'}`}>{cursorText}</div>
-      <Header />
-      <main className='h-screen w-full text-white'>
-        <SVGanimation />
-        <Marquee />
-        <ImageOverlay setCursorText={setCursorText} />
-        <TextAnimation />
-      </main>
-      <HorizontalScroll />
+    <div className='h-full w-full'>
+      <div id='page1' className='h-screen w-full text-black  bg-[#F5E31A] flex justify-center items-center font-bold'>
+        <h1><em>We are a</em> CREATIVE <em>studio</em> DEDICATED <em>to</em> CULTURAL
+          ADVANCEMENT <em>through</em> STRATEGY <em>and</em> DESIGN.</h1>
+      </div>
+      <div id='page2' className='bg-black w-full h-screen'></div>
+      <div id='page3' className='bg-white w-full h-screen'></div>
     </div>
   )
 }
