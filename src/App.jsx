@@ -91,7 +91,7 @@ const App = () => {
           id="page1"
           className="h-screen w-full text-[#555555] bg-[#F5E31A] flex justify-center items-center text-center"
         >
-          <h1 ref={headRef} className="text-[3vw] tracking-[-2px] leading-[3vw]">
+          <h1 ref={headRef} className="text-[3vw] tracking-[-0.3px] leading-[3vw]">
             <em>We are a</em> <span>CREATIVE</span> <em>studio</em> <span>DEDICATED</span> <em>to</em> <span>CULTURAL</span>
             <br />
             <span>ADVANCEMENT</span> <em>through</em> <span>STRATEGY</span> <em>and</em> <span>DESIGN.</span>
@@ -99,7 +99,7 @@ const App = () => {
         </div>
 
         <div id="page2" className="bg-pink-400 w-full h-screen" data-scroll data-scroll-speed='2'></div>
-        <div id="page3" className="bg-white w-30 rounde-full h-30" data-scroll data-scroll-speed='5'></div>
+        <div id="page3" className="bg-white w-30 rounde-full h-30" data-scroll data-scroll-speed='-5'></div>
       </div>
     </div>
   );
