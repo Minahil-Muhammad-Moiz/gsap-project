@@ -3,11 +3,13 @@ import gsap from "gsap";
 import React, { useEffect, useRef, useState } from "react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import LocomotiveScroll from "locomotive-scroll";
+import { BiPlus } from "react-icons/bi";
 
 const App = () => {
   const scrollRef = useRef(null);
   const headRef = useRef(null);
   const [scrollReady, setScrollReady] = useState(false); // 🚀 Prevent Locomotive from running before loader
+  const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
@@ -80,18 +82,36 @@ const App = () => {
   return (
     <div ref={scrollRef}>
       {/* Loader */}
-      <div id="loader" className="h-screen w-full text-white bg-[#3b3b3b] fixed text-center z-50">
+      {/* <div id="loader" className="h-screen w-full text-white bg-[#3b3b3b] fixed text-center z-50">
         <div className="moveUp bg-[#F5E31A] w-full h-full"></div>
         <div className="moveUp bg-[#d900ff] w-full h-full"></div>
-      </div>
+      </div> */}
 
       {/* Main Content */}
-      <div className="h-full w-full" id="main">
+      <div className="h-full w-full relative" id="main">
+
+        <div className="fixed h-[5vh] text-[1.3vw] z-50 top-0 w-full flex items-center justify-between  text-black"
+          data-scroll
+          data-scroll-sticky
+          data-scroll-target="#main">
+          <div className="font-extrabold"><em>LOGO</em></div>
+          <div className="overflow-hidden flex">
+            <div className=" relative w-60 overflow-hidden text-lg">
+              <ul className={`flex gap-4 absolute transition-all duration-500 ${isOpen ? 'left-0' : 'left-32'}`}>
+                <li>Projects</li>
+                <li>About</li>
+                <li>Contact</li>
+              </ul>
+            </div>
+            <div onClick={() => setIsOpen(!isOpen)} className={`text-4xl  ${isOpen ? 'rotate-[135deg]' : 'rotate-0'} backdrop-blur-[3px] transition-all duration-500`} id='navIcon'><BiPlus /></div>
+          </div>
+        </div>
+
         <div
           id="page1"
-          className="h-screen w-full text-[#555555] bg-[#F5E31A] flex justify-center items-center text-center"
+          className="h-screen w-full text-[#555555] bg-[#F5E31A]  flex justify-center items-center text-center"
         >
-          <h1 ref={headRef} className="text-[3vw] tracking-[-0.3px] leading-[3vw]">
+          <h1 ref={headRef} className="font-light text-[3vw] tracking-[-0.3px] leading-[3vw]">
             <em>We are a</em> <span>CREATIVE</span> <em>studio</em> <span>DEDICATED</span> <em>to</em> <span>CULTURAL</span>
             <br />
             <span>ADVANCEMENT</span> <em>through</em> <span>STRATEGY</span> <em>and</em> <span>DESIGN.</span>
