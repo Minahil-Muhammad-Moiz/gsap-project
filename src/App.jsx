@@ -9,8 +9,9 @@ const App = () => {
   const scrollRef = useRef(null);
   const headRef = useRef(null);
   const page2 = useRef(null)
-  const [scrollReady, setScrollReady] = useState(false); // 🚀 Prevent Locomotive from running before loader
+  const [scrollReady, setScrollReady] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
+  const locomotiveScrollRef = useRef(null);
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
@@ -21,7 +22,8 @@ const App = () => {
         smooth: true,
       });
 
-      // Sync GSAP with Locomotive Scroll
+      locomotiveScrollRef.current = scroll;
+
       scroll.on("scroll", ScrollTrigger.update);
       ScrollTrigger.scrollerProxy(scrollRef.current, {
         scrollTop(value) {
@@ -41,6 +43,11 @@ const App = () => {
     }
   }, [scrollReady]); // 🚀 Locomotive Scroll only initializes AFTER the loader animation
 
+  const handleTop = () => {
+    if (locomotiveScrollRef.current) {
+      locomotiveScrollRef.current.scrollTo(0);
+    }
+  };
   useGSAP(() => {
     const tl = gsap.timeline();
 
@@ -286,7 +293,9 @@ const App = () => {
           </div>
         </div>
       </div>
-      
+      <div className="footer cursor-pointer flex items-center justify-center " onClick={handleTop}>
+        <h1 className="flex text-black text-[2vw] items-center"><BiArrowToTop /> BACK TO TOP</h1>
+      </div>
     </div>
   );
 };
