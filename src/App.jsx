@@ -20,6 +20,7 @@ const App = () => {
       const scroll = new LocomotiveScroll({
         el: scrollRef.current,
         smooth: true,
+        lerp: 0.08, // Adjust for smoother experience
       });
 
       locomotiveScrollRef.current = scroll;
@@ -39,9 +40,10 @@ const App = () => {
 
       return () => {
         scroll.destroy();
+        ScrollTrigger.kill();
       };
     }
-  }, [scrollReady]); // 🚀 Locomotive Scroll only initializes AFTER the loader animation
+  }, [scrollReady]);
 
   const handleTop = () => {
     if (locomotiveScrollRef.current) {
@@ -90,7 +92,7 @@ const App = () => {
     gsap.to('.marquee', {
       transform: 'translateX(-100%)',
       repeat: -1,
-      duration: 5,
+      duration: 10,
       ease: 'none',
 
     })
@@ -108,7 +110,7 @@ const App = () => {
   return (
     <div ref={scrollRef}>
       {/* Loader */}
-      <div id="loader" className="hidden h-screen w-full text-white bg-[#3b3b3b] fixed text-center z-50">
+      <div id="loader" className=" h-screen w-full text-white bg-[#3b3b3b] fixed text-center z-50">
         <div className="moveUp bg-[#F5E31A] w-full h-full"></div>
         <div className="moveUp bg-[#d900ff] w-full h-full"></div>
       </div>
@@ -129,7 +131,7 @@ const App = () => {
                 <li>Contact</li>
               </ul>
             </div>
-            <div onClick={() => setIsOpen(!isOpen)} className={`text-4xl  ${isOpen ? 'rotate-[135deg]' : 'rotate-0'} backdrop-blur-[3px] transition-all duration-500`} id='navIcon'><BiPlus /></div>
+            <div onClick={() => setIsOpen(!isOpen)} className={`text-4xl  ${isOpen ? 'rotate-[135deg]' : 'rotate-0'} transition-all duration-500`} id='navIcon'><BiPlus /></div>
           </div>
         </div>
 
