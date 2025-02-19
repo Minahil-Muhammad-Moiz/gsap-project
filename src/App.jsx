@@ -3,7 +3,7 @@ import gsap from "gsap";
 import React, { useEffect, useRef, useState } from "react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import LocomotiveScroll from "locomotive-scroll";
-import { BiPlus } from "react-icons/bi";
+import { BiArrowToTop, BiPlus, BiUpArrow } from "react-icons/bi";
 
 const App = () => {
   const scrollRef = useRef(null);
@@ -203,8 +203,90 @@ const App = () => {
           </div>
         </div>
 
-        <div id="page3" className="bg-white w-full h-screen" ></div>
+        <div id="page3" className="bg-white w-full min-h-screen" >
+          <div className="img-container p-10  grid grid-cols-3  gap-10">
+            <div className="line  flex flex-col gap-10">
+              <div className="img-div w-full h-[38vw]  relative group overflow-hidden">
+                <div className="absolute w-full h-full bg-[#000000c0] flex items-center justify-center opacity-0 group-hover:opacity-100 group-hover:bg-black delay-75 transition-all duration-300 z-10">
+                  <p className="uppercase text-[2vw] text-center p-10 ">FIRST <em>image</em></p>
+                </div>
+                <img src="https://images.unsplash.com/photo-1739900292622-a7f860175aad?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHw1Mnx8fGVufDB8fHx8fA%3D%3D" alt="img1" className="w-full h-full object-cover group-hover:scale-[1.2] transition-all duration-300" />
+              </div>
+              <div className="img-div w-full h-[35vw]  relative group overflow-hidden">
+                <div className="absolute w-full h-full bg-[#000000c0] flex items-center justify-center opacity-0 group-hover:opacity-100 group-hover:bg-black delay-75 transition-all duration-300 z-10">
+                  <p className="uppercase text-[2vw] text-center p-10 ">FIRST <em>image</em></p>
+                </div>
+                <img src="https://images.unsplash.com/photo-1737502860946-8fd4e3b26f32?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="img2" className="w-full h-full object-cover group-hover:scale-[1.2] transition-all duration-300" />
+              </div>
+              <div className="img-div w-full h-[38vw]  relative group overflow-hidden">
+                <div className="absolute w-full h-full bg-[#000000c0] flex items-center justify-center opacity-0 group-hover:opacity-100 group-hover:bg-black delay-75 transition-all duration-300 z-10">
+                  <p className="uppercase text-[2vw] text-center p-10 ">FIRST <em>image</em></p>
+                </div>
+                <img src="https://images.unsplash.com/photo-1739666757651-0648a467c641?q=80&w=2002&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="img2" className="w-full h-full object-cover group-hover:scale-[1.2] transition-all duration-300" />
+              </div>
+              <div className="img-div w-full h-[40vw]  relative group overflow-hidden">
+                <div className="absolute w-full h-full bg-[#000000c0] flex items-center justify-center opacity-0 group-hover:opacity-100 group-hover:bg-black delay-75 transition-all duration-300 z-10">
+                  <p className="uppercase text-[2vw] text-center p-10 ">FIRST <em>image</em></p>
+                </div>
+                <img src="https://images.unsplash.com/photo-1739532049391-2867bd1a71e8?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="img2" className="w-full h-full object-cover group-hover:scale-[1.2] transition-all duration-300" />
+              </div>
+            </div>
+            <div className="line  flex flex-col gap-10">
+              <div className="img-div w-full h-[32vw]  relative group overflow-hidden">
+                <div className="absolute w-full h-full bg-[#000000c0] flex items-center justify-center opacity-0 group-hover:opacity-100 group-hover:bg-black delay-75 transition-all duration-300 z-10">
+                  <p className="uppercase text-[2vw] text-center p-10 ">FIRST <em>image</em></p>
+                </div>
+                <img src="https://images.unsplash.com/photo-1739532049391-2867bd1a71e8?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="img2" className="w-full h-full object-cover group-hover:scale-[1.2] transition-all duration-300" />
+              </div>
+              <div className="img-div w-full h-[40vw]  relative group overflow-hidden">
+                <div className="absolute w-full h-full bg-[#000000c0] flex items-center justify-center opacity-0 group-hover:opacity-100 group-hover:bg-black delay-75 transition-all duration-300 z-10">
+                  <p className="uppercase text-[2vw] text-center p-10 ">FIRST <em>image</em></p>
+                </div>
+                <img src="https://images.unsplash.com/photo-1739900292622-a7f860175aad?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHw1Mnx8fGVufDB8fHx8fA%3D%3D" alt="img1" className="w-full h-full object-cover group-hover:scale-[1.2] transition-all duration-300" />
+              </div>
+              <div className="img-div w-full h-[40vw]  relative group overflow-hidden">
+                <div className="absolute w-full h-full bg-[#000000c0] flex items-center justify-center opacity-0 group-hover:opacity-100 group-hover:bg-black delay-75 transition-all duration-300 z-10">
+                  <p className="uppercase text-[2vw] text-center p-10 ">FIRST <em>image</em></p>
+                </div>
+                <img src="https://images.unsplash.com/photo-1737502860946-8fd4e3b26f32?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="img2" className="w-full h-full object-cover group-hover:scale-[1.2] transition-all duration-300" />
+              </div>
+              <div className="img-div w-full h-[40vw]  relative group overflow-hidden">
+                <div className="absolute w-full h-full bg-[#000000c0] flex items-center justify-center opacity-0 group-hover:opacity-100 group-hover:bg-black delay-75 transition-all duration-300 z-10">
+                  <p className="uppercase text-[2vw] text-center p-10 ">FIRST <em>image</em></p>
+                </div>
+                <img src="https://images.unsplash.com/photo-1739666757651-0648a467c641?q=80&w=2002&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="img2" className="w-full h-full object-cover group-hover:scale-[1.2] transition-all duration-300" />
+              </div>
+            </div>
+            <div className="line  flex flex-col gap-10">
+              <div className="img-div w-full h-[40vw]  relative group overflow-hidden">
+                <div className="absolute w-full h-full bg-[#000000c0] flex items-center justify-center opacity-0 group-hover:opacity-100 group-hover:bg-black delay-75 transition-all duration-300 z-10">
+                  <p className="uppercase text-[2vw] text-center p-10 ">FIRST <em>image</em></p>
+                </div>
+                <img src="https://images.unsplash.com/photo-1739666757651-0648a467c641?q=80&w=2002&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="img2" className="w-full h-full object-cover group-hover:scale-[1.2] transition-all duration-300" />
+              </div>
+              <div className="img-div w-full h-[45vw]  relative group overflow-hidden">
+                <div className="absolute w-full h-full bg-[#000000c0] flex items-center justify-center opacity-0 group-hover:opacity-100 group-hover:bg-black delay-75 transition-all duration-300 z-10">
+                  <p className="uppercase text-[2vw] text-center p-10 ">FIRST <em>image</em></p>
+                </div>
+                <img src="https://images.unsplash.com/photo-1739900292622-a7f860175aad?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHw1Mnx8fGVufDB8fHx8fA%3D%3D" alt="img1" className="w-full h-full object-cover group-hover:scale-[1.2] transition-all duration-300" />
+              </div>
+              <div className="img-div w-full h-[40vw]  relative group overflow-hidden">
+                <div className="absolute w-full h-full bg-[#000000c0] flex items-center justify-center opacity-0 group-hover:opacity-100 group-hover:bg-black delay-75 transition-all duration-300 z-10">
+                  <p className="uppercase text-[2vw] text-center p-10 ">FIRST <em>image</em></p>
+                </div>
+                <img src="https://images.unsplash.com/photo-1737502860946-8fd4e3b26f32?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="img2" className="w-full h-full object-cover group-hover:scale-[1.2] transition-all duration-300" />
+              </div>
+              <div className="img-div w-full h-[40vw]  relative group overflow-hidden">
+                <div className="absolute w-full h-full bg-[#000000c0] flex items-center justify-center opacity-0 group-hover:opacity-100 group-hover:bg-black delay-75 transition-all duration-300 z-10">
+                  <p className="uppercase text-[2vw] text-center p-10 ">FIRST <em>image</em></p>
+                </div>
+                <img src="https://images.unsplash.com/photo-1739532049391-2867bd1a71e8?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="img2" className="w-full h-full object-cover group-hover:scale-[1.2] transition-all duration-300" />
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
+      
     </div>
   );
 };
