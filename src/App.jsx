@@ -8,6 +8,7 @@ import { BiPlus } from "react-icons/bi";
 const App = () => {
   const scrollRef = useRef(null);
   const headRef = useRef(null);
+  const page2 = useRef(null)
   const [scrollReady, setScrollReady] = useState(false); // 🚀 Prevent Locomotive from running before loader
   const [isOpen, setIsOpen] = useState(false);
 
@@ -87,10 +88,19 @@ const App = () => {
     })
   });
 
+  const handleMouseEnter = (ele) => {
+    const bgImg = ele.currentTarget.getAttribute('data-img');
+    page2.current.style.backgroundImage = `url('${bgImg}')`;
+  }
+
+  const handleMouseLeave = () => {
+    page2.current.style.backgroundImage = '';
+  }
+
   return (
     <div ref={scrollRef}>
       {/* Loader */}
-      <div id="loader" className=" hidden h-screen w-full text-white bg-[#3b3b3b] fixed text-center z-50">
+      <div id="loader" className=" h-screen w-full text-white bg-[#3b3b3b] fixed text-center z-50">
         <div className="moveUp bg-[#F5E31A] w-full h-full"></div>
         <div className="moveUp bg-[#d900ff] w-full h-full"></div>
       </div>
@@ -98,7 +108,7 @@ const App = () => {
       {/* Main Content */}
       <div className="h-full w-full relative" id="main">
 
-        <div className="fixed h-[5vh] text-[1.3vw] z-50 top-0 w-full flex items-center justify-between  text-[#555555]"
+        <div className="fixed h-[5vh] text-[1.3vw] z-20 top-0 w-full flex items-center justify-between  text-[#555555]"
           data-scroll
           data-scroll-sticky
           data-scroll-target="#main">
@@ -117,7 +127,7 @@ const App = () => {
 
         <div data-scroll data-scroll-speed='-1'
           id="page1"
-          className="h-screen w-full text-[#555555] bg-[#F5E31A]  flex justify-center items-center text-center"
+          className="h-screen w-full  bg-[#F5E31A] text-[#555555] flex justify-center items-center text-center"
         >
           <h1 ref={headRef} className="font-light text-[3vw] tracking-[-0.3px] leading-[3vw]">
             <em>We are a</em> <span>CREATIVE</span> <em>studio</em> <span>DEDICATED</span> <em>to</em> <span>CULTURAL</span>
@@ -126,9 +136,9 @@ const App = () => {
           </h1>
         </div>
 
-        <div id="page2" className="bg-[#F5E31A] w-full h-screen flex flex-col -space-y-18 items-center justify-center" data-scroll data-scroll-speed='1'>
-          <div className="uppercase w-full flex text-center flex-col justify-center items-center relative">
-            <h2 className="w-full text-[7vw] z-10  peer hover:italic font-extralight cursor-pointer text-[#555555]">Home</h2>
+        <div ref={page2} id="page2" className="bg-[#F5E31A] w-full h-screen flex flex-col -space-y-18 items-center justify-center bg-center bg-cover transition-all duration-500" data-scroll data-scroll-speed='1'>
+          <div className="uppercase w-full flex text-center flex-col justify-center items-center relative" data-img='https://plus.unsplash.com/premium_photo-1699025726754-8da11fa3fb58?q=80&w=1971&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D' onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+            <h2 className="w-full text-[7vw] z-10  peer hover:italic font-extralight cursor-pointer ">Home</h2>
             <div className="w-full absolute top-[50%] -translate-y-[50%] whitespace-nowrap opacity-0 scale-y-0 peer-hover:opacity-100 peer-hover:scale-y-100 peer-hover:block transition-all duration-150 overflow-hidden">
               <div className="absolute bg-[#d900ffe5]  h-full w-[40%] left-[50%] -translate-x-[50%] z-10 overflow-y-hidden shadow-[10px_0px_40px_40px] shadow-[#d900ffe5]"></div>
               <div className=" bg-[#d900ff] whitespace-nowrap inline-block py-2 marquee ">
@@ -148,10 +158,10 @@ const App = () => {
               </div>
             </div>
           </div>
-          <div className="uppercase w-full flex text-center flex-col justify-center items-center relative">
-            <h2 className="w-full text-[7vw] z-10  peer hover:italic font-extralight cursor-pointer text-[#555555]">About</h2>
+          <div className="uppercase w-full flex text-center flex-col justify-center items-center relative" data-img='https://plus.unsplash.com/premium_photo-1736168213200-efe2485efc8a?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwyNXx8fGVufDB8fHx8fA%3D%3D' onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+            <h2 className="w-full text-[7vw] z-10  peer hover:italic font-extralight cursor-pointer ">About</h2>
             <div className="w-full absolute top-[50%] -translate-y-[50%] whitespace-nowrap opacity-0 scale-y-0 peer-hover:opacity-100 peer-hover:scale-y-100 peer-hover:block transition-all duration-150 overflow-hidden">
-            <div className="absolute bg-[#d900ffe5]  h-full w-[40%] left-[50%] -translate-x-[50%] z-10 overflow-y-hidden shadow-[10px_0px_40px_40px] shadow-[#d900ffe5]"></div>
+              <div className="absolute bg-[#d900ffe5]  h-full w-[40%] left-[50%] -translate-x-[50%] z-10 overflow-y-hidden shadow-[10px_0px_40px_40px] shadow-[#d900ffe5]"></div>
               <div className=" bg-[#d900ff] whitespace-nowrap inline-block py-2 marquee ">
                 <h5 className="inline-block whitespace-nowrap mr-3 tracking-widest">We believe in the power of intentional creativity.</h5>
               </div>
@@ -169,10 +179,10 @@ const App = () => {
               </div>
             </div>
           </div>
-          <div className="uppercase w-full flex text-center flex-col justify-center items-center relative">
-            <h2 className="w-full text-[7vw] z-10  peer hover:italic font-extralight cursor-pointer text-[#555555]">Contact</h2>
+          <div className="uppercase w-full flex text-center flex-col justify-center items-center relative" data-img='https://images.unsplash.com/photo-1739560116855-23a8c43afb5c?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D' onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+            <h2 className="w-full text-[7vw] z-10  peer hover:italic font-extralight cursor-pointer ">Contact</h2>
             <div className="w-full absolute top-[50%] -translate-y-[50%] whitespace-nowrap opacity-0 scale-y-0 peer-hover:opacity-100 peer-hover:scale-y-100 peer-hover:block transition-all duration-700 overflow-hidden">
-            <div className="absolute bg-[#d900ffe5]  h-full w-[40%] left-[50%] -translate-x-[50%] z-10 overflow-y-hidden shadow-[10px_0px_40px_40px] shadow-[#d900ffe5]"></div>
+              <div className="absolute bg-[#d900ffe5]  h-full w-[40%] left-[50%] -translate-x-[50%] z-10 overflow-y-hidden shadow-[10px_0px_40px_40px] shadow-[#d900ffe5]"></div>
               <div className=" bg-[#d900ff] whitespace-nowrap inline-block py-2 marquee ">
                 <h5 className="inline-block whitespace-nowrap mr-3 tracking-widest">We believe in the power of intentional creativity.</h5>
               </div>
