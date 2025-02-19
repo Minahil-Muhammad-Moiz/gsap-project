@@ -74,6 +74,7 @@ const App = () => {
     // Page transition animation
     tl.to("#page1", {
       backgroundColor: "#fff",
+      // color: '#d900ff',
       height: "30vh",
       ease: "expo.out",
       duration: 1,
@@ -100,7 +101,7 @@ const App = () => {
   return (
     <div ref={scrollRef}>
       {/* Loader */}
-      <div id="loader" className=" h-screen w-full text-white bg-[#3b3b3b] fixed text-center z-50">
+      <div id="loader" className="hidden h-screen w-full text-white bg-[#3b3b3b] fixed text-center z-50">
         <div className="moveUp bg-[#F5E31A] w-full h-full"></div>
         <div className="moveUp bg-[#d900ff] w-full h-full"></div>
       </div>
@@ -108,12 +109,12 @@ const App = () => {
       {/* Main Content */}
       <div className="h-full w-full relative" id="main">
 
-        <div className="fixed h-[5vh] text-[1.3vw] z-20 top-0 w-full flex items-center justify-between  text-[#555555]"
+        <div className="fixed h-[5vh] text-[1.3vw] z-20 top-0 w-full flex items-center justify-between  text-[#d900ff] px-8 py-6"
           data-scroll
           data-scroll-sticky
           data-scroll-target="#main">
           <div className="font-extrabold"><em>LOGO</em></div>
-          <div className="overflow-hidden flex">
+          <div className="overflow-hidden flex my-auto">
             <div className=" relative w-60 overflow-hidden text-lg">
               <ul className={`flex gap-8 w-full absolute transition-all duration-500 ${isOpen ? 'left-0' : 'left-40'}`}>
                 <li>Projects</li>
@@ -125,7 +126,7 @@ const App = () => {
           </div>
         </div>
 
-        <div data-scroll data-scroll-speed='-1'
+        <div
           id="page1"
           className="h-screen w-full  bg-[#F5E31A] text-[#555555] flex justify-center items-center text-center"
         >
@@ -136,7 +137,7 @@ const App = () => {
           </h1>
         </div>
 
-        <div ref={page2} id="page2" className="bg-[#F5E31A] w-full h-screen flex flex-col -space-y-18 items-center justify-center bg-center bg-cover transition-all duration-500" data-scroll data-scroll-speed='1'>
+        <div ref={page2} id="page2" className="bg-[#F5E31A] w-full h-[60vh] flex flex-col -space-y-18 items-center justify-center bg-center bg-cover transition-all duration-500" >
           <div className="uppercase w-full flex text-center flex-col justify-center items-center relative" data-img='https://plus.unsplash.com/premium_photo-1699025726754-8da11fa3fb58?q=80&w=1971&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D' onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
             <h2 className="w-full text-[7vw] z-10  peer hover:italic font-extralight cursor-pointer ">Home</h2>
             <div className="w-full absolute top-[50%] -translate-y-[50%] whitespace-nowrap opacity-0 scale-y-0 peer-hover:opacity-100 peer-hover:scale-y-100 peer-hover:block transition-all duration-150 overflow-hidden">
@@ -202,7 +203,7 @@ const App = () => {
           </div>
         </div>
 
-        <div id="page3" className="bg-white w-full h-screen"></div>
+        <div id="page3" className="bg-white w-full h-screen" ></div>
       </div>
     </div>
   );
