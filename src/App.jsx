@@ -77,27 +77,35 @@ const App = () => {
       ease: "expo.out",
       duration: 1,
     });
+
+    gsap.to('.marquee', {
+      transform: 'translateX(-100%)',
+      repeat: -1,
+      duration: 5,
+      ease: 'none',
+
+    })
   });
 
   return (
     <div ref={scrollRef}>
       {/* Loader */}
-      {/* <div id="loader" className="h-screen w-full text-white bg-[#3b3b3b] fixed text-center z-50">
+      <div id="loader" className=" hidden h-screen w-full text-white bg-[#3b3b3b] fixed text-center z-50">
         <div className="moveUp bg-[#F5E31A] w-full h-full"></div>
         <div className="moveUp bg-[#d900ff] w-full h-full"></div>
-      </div> */}
+      </div>
 
       {/* Main Content */}
       <div className="h-full w-full relative" id="main">
 
-        <div className="fixed h-[5vh] text-[1.3vw] z-50 top-0 w-full flex items-center justify-between  text-black"
+        <div className="fixed h-[5vh] text-[1.3vw] z-50 top-0 w-full flex items-center justify-between  text-[#555555]"
           data-scroll
           data-scroll-sticky
           data-scroll-target="#main">
           <div className="font-extrabold"><em>LOGO</em></div>
           <div className="overflow-hidden flex">
             <div className=" relative w-60 overflow-hidden text-lg">
-              <ul className={`flex gap-4 absolute transition-all duration-500 ${isOpen ? 'left-0' : 'left-32'}`}>
+              <ul className={`flex gap-8 w-full absolute transition-all duration-500 ${isOpen ? 'left-0' : 'left-40'}`}>
                 <li>Projects</li>
                 <li>About</li>
                 <li>Contact</li>
@@ -107,7 +115,7 @@ const App = () => {
           </div>
         </div>
 
-        <div
+        <div data-scroll data-scroll-speed='-1'
           id="page1"
           className="h-screen w-full text-[#555555] bg-[#F5E31A]  flex justify-center items-center text-center"
         >
@@ -118,8 +126,73 @@ const App = () => {
           </h1>
         </div>
 
-        <div id="page2" className="bg-pink-400 w-full h-screen" data-scroll data-scroll-speed='2'></div>
-        <div id="page3" className="bg-white w-30 rounde-full h-30" data-scroll data-scroll-speed='-5'></div>
+        <div id="page2" className="bg-[#F5E31A] w-full h-screen flex flex-col -space-y-18 items-center justify-center" data-scroll data-scroll-speed='1'>
+          <div className="uppercase w-full flex text-center flex-col justify-center items-center relative">
+            <h2 className="w-full text-[7vw] z-10  peer hover:italic font-extralight cursor-pointer text-[#555555]">Home</h2>
+            <div className="w-full absolute top-[50%] -translate-y-[50%] whitespace-nowrap opacity-0 scale-y-0 peer-hover:opacity-100 peer-hover:scale-y-100 peer-hover:block transition-all duration-150 overflow-hidden">
+              <div className="absolute bg-[#d900ffe5]  h-full w-[40%] left-[50%] -translate-x-[50%] z-10 overflow-y-hidden shadow-[10px_0px_40px_40px] shadow-[#d900ffe5]"></div>
+              <div className=" bg-[#d900ff] whitespace-nowrap inline-block py-2 marquee ">
+                <h5 className="inline-block whitespace-nowrap mr-3 tracking-widest">We believe in the power of intentional creativity.</h5>
+              </div>
+              <div className=" bg-[#d900ff] whitespace-nowrap inline-block py-2 marquee ">
+                <h5 className="inline-block whitespace-nowrap mr-3 tracking-widest">We believe in the power of intentional creativity.</h5>
+              </div>
+              <div className=" bg-[#d900ff] whitespace-nowrap inline-block py-2 marquee ">
+                <h5 className="inline-block whitespace-nowrap mr-3 tracking-widest">We believe in the power of intentional creativity.</h5>
+              </div>
+              <div className=" bg-[#d900ff] whitespace-nowrap inline-block py-2 marquee ">
+                <h5 className="inline-block whitespace-nowrap mr-3 tracking-widest">We believe in the power of intentional creativity.</h5>
+              </div>
+              <div className=" bg-[#d900ff] whitespace-nowrap inline-block py-2 marquee ">
+                <h5 className="inline-block whitespace-nowrap mr-3 tracking-widest">We believe in the power of intentional creativity.</h5>
+              </div>
+            </div>
+          </div>
+          <div className="uppercase w-full flex text-center flex-col justify-center items-center relative">
+            <h2 className="w-full text-[7vw] z-10  peer hover:italic font-extralight cursor-pointer text-[#555555]">About</h2>
+            <div className="w-full absolute top-[50%] -translate-y-[50%] whitespace-nowrap opacity-0 scale-y-0 peer-hover:opacity-100 peer-hover:scale-y-100 peer-hover:block transition-all duration-150 overflow-hidden">
+            <div className="absolute bg-[#d900ffe5]  h-full w-[40%] left-[50%] -translate-x-[50%] z-10 overflow-y-hidden shadow-[10px_0px_40px_40px] shadow-[#d900ffe5]"></div>
+              <div className=" bg-[#d900ff] whitespace-nowrap inline-block py-2 marquee ">
+                <h5 className="inline-block whitespace-nowrap mr-3 tracking-widest">We believe in the power of intentional creativity.</h5>
+              </div>
+              <div className=" bg-[#d900ff] whitespace-nowrap inline-block py-2 marquee ">
+                <h5 className="inline-block whitespace-nowrap mr-3 tracking-widest">We believe in the power of intentional creativity.</h5>
+              </div>
+              <div className=" bg-[#d900ff] whitespace-nowrap inline-block py-2 marquee ">
+                <h5 className="inline-block whitespace-nowrap mr-3 tracking-widest">We believe in the power of intentional creativity.</h5>
+              </div>
+              <div className=" bg-[#d900ff] whitespace-nowrap inline-block py-2 marquee ">
+                <h5 className="inline-block whitespace-nowrap mr-3 tracking-widest">We believe in the power of intentional creativity.</h5>
+              </div>
+              <div className=" bg-[#d900ff] whitespace-nowrap inline-block py-2 marquee ">
+                <h5 className="inline-block whitespace-nowrap mr-3 tracking-widest">We believe in the power of intentional creativity.</h5>
+              </div>
+            </div>
+          </div>
+          <div className="uppercase w-full flex text-center flex-col justify-center items-center relative">
+            <h2 className="w-full text-[7vw] z-10  peer hover:italic font-extralight cursor-pointer text-[#555555]">Contact</h2>
+            <div className="w-full absolute top-[50%] -translate-y-[50%] whitespace-nowrap opacity-0 scale-y-0 peer-hover:opacity-100 peer-hover:scale-y-100 peer-hover:block transition-all duration-150 overflow-hidden">
+            <div className="absolute bg-[#d900ffe5]  h-full w-[40%] left-[50%] -translate-x-[50%] z-10 overflow-y-hidden shadow-[10px_0px_40px_40px] shadow-[#d900ffe5]"></div>
+              <div className=" bg-[#d900ff] whitespace-nowrap inline-block py-2 marquee ">
+                <h5 className="inline-block whitespace-nowrap mr-3 tracking-widest">We believe in the power of intentional creativity.</h5>
+              </div>
+              <div className=" bg-[#d900ff] whitespace-nowrap inline-block py-2 marquee ">
+                <h5 className="inline-block whitespace-nowrap mr-3 tracking-widest">We believe in the power of intentional creativity.</h5>
+              </div>
+              <div className=" bg-[#d900ff] whitespace-nowrap inline-block py-2 marquee ">
+                <h5 className="inline-block whitespace-nowrap mr-3 tracking-widest">We believe in the power of intentional creativity.</h5>
+              </div>
+              <div className=" bg-[#d900ff] whitespace-nowrap inline-block py-2 marquee ">
+                <h5 className="inline-block whitespace-nowrap mr-3 tracking-widest">We believe in the power of intentional creativity.</h5>
+              </div>
+              <div className=" bg-[#d900ff] whitespace-nowrap inline-block py-2 marquee ">
+                <h5 className="inline-block whitespace-nowrap mr-3 tracking-widest">We believe in the power of intentional creativity.</h5>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="page3" className="bg-white w-full h-screen"></div>
       </div>
     </div>
   );

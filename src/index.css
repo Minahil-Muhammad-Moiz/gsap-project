@@ -5,5 +5,19 @@ body {
     overflow-x: hidden;
     font-family: 'Freight big pro';
     background: #a0a0a0;
-    font-weight: lighter;
+    font-weight: 100;
 }
+
+/* .marquee {
+    animation: 5s linear infinite move
+}
+
+@keyframes move {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-100%);
+    }
+} */
