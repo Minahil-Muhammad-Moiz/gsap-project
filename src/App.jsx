@@ -171,7 +171,7 @@ const App = () => {
           </div>
           <div className="uppercase w-full flex text-center flex-col justify-center items-center relative">
             <h2 className="w-full text-[7vw] z-10  peer hover:italic font-extralight cursor-pointer text-[#555555]">Contact</h2>
-            <div className="w-full absolute top-[50%] -translate-y-[50%] whitespace-nowrap opacity-0 scale-y-0 peer-hover:opacity-100 peer-hover:scale-y-100 peer-hover:block transition-all duration-150 overflow-hidden">
+            <div className="w-full absolute top-[50%] -translate-y-[50%] whitespace-nowrap opacity-0 scale-y-0 peer-hover:opacity-100 peer-hover:scale-y-100 peer-hover:block transition-all duration-700 overflow-hidden">
             <div className="absolute bg-[#d900ffe5]  h-full w-[40%] left-[50%] -translate-x-[50%] z-10 overflow-y-hidden shadow-[10px_0px_40px_40px] shadow-[#d900ffe5]"></div>
               <div className=" bg-[#d900ff] whitespace-nowrap inline-block py-2 marquee ">
                 <h5 className="inline-block whitespace-nowrap mr-3 tracking-widest">We believe in the power of intentional creativity.</h5>
