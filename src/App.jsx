@@ -4,6 +4,8 @@ import React, { useEffect, useRef, useState } from "react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import LocomotiveScroll from "locomotive-scroll";
 import { BiArrowToTop, BiPlus, BiUpArrow } from "react-icons/bi";
+import SVGanimation from './components/SVGanimation'
+import HorizontalScroll from "./components/HorizontalScroll";
 
 const App = () => {
   const scrollRef = useRef(null);
@@ -20,7 +22,7 @@ const App = () => {
       const scroll = new LocomotiveScroll({
         el: scrollRef.current,
         smooth: true,
-        lerp: 0.08, // Adjust for smoother experience
+        // lerp: 0.08, // Adjust for smoother experience
       });
 
       locomotiveScrollRef.current = scroll;
@@ -53,21 +55,27 @@ const App = () => {
   useGSAP(() => {
     const tl = gsap.timeline();
 
-    // Loader animation
-    tl.to("#loader .moveUp", {
-      height: 0,
-      delay: 0.9,
-      stagger: 0.3,
-      duration: 1.5,
-      ease: "expo.inOut",
-    });
-    tl.to("#loader", {
-      height: 0,
-      delay: -0.4,
-      ease: "power4.inOut",
-      duration: 0.6,
-      onComplete: () => setScrollReady(true), // 🚀 Enable Locomotive Scroll AFTER loader animation
-    });
+// Disable scrolling at the start
+document.body.style.overflow = "hidden"; 
+
+// Loader animation
+tl.to("#loader .moveUp", {
+  height: 0,
+  delay: 0.9,
+  stagger: 0.3,
+  duration: 1.5,
+  ease: "expo.inOut",
+});
+tl.to("#loader", {
+  height: 0,
+  delay: -0.4,
+  ease: "power4.inOut",
+  duration: 0.6,
+  onComplete: () => {
+    setScrollReady(true);
+  },
+});
+
 
     // Fade-in effect for heading
     if (headRef.current) {
@@ -84,7 +92,7 @@ const App = () => {
     tl.to("#page1", {
       backgroundColor: "#fff",
       // color: '#d900ff',
-      height: "30vh",
+      // height: "30vh",
       ease: "expo.out",
       duration: 1,
     });
@@ -108,15 +116,15 @@ const App = () => {
   }
 
   return (
-    <div ref={scrollRef}>
+    <div ref={scrollRef} >
       {/* Loader */}
-      <div id="loader" className=" h-screen w-full text-white bg-[#3b3b3b] fixed text-center z-50">
+      <div id="loader" className="h-screen w-full text-white bg-[#3b3b3b] fixed text-center z-50">
         <div className="moveUp bg-[#F5E31A] w-full h-full"></div>
         <div className="moveUp bg-[#d900ff] w-full h-full"></div>
       </div>
 
       {/* Main Content */}
-      <div className="h-full w-full relative" id="main">
+      <div className="w-full relative" id="main">
 
         <div className="fixed h-[5vh] text-[1.3vw] z-20 top-0 w-full flex items-center justify-between  text-[#d900ff] px-8 py-6"
           data-scroll
@@ -137,7 +145,7 @@ const App = () => {
 
         <div
           id="page1"
-          className="h-screen w-full  bg-[#F5E31A] text-[#555555] flex justify-center items-center text-center"
+          className="h-screen w-full bg-[#F5E31A] text-[#555555] flex justify-center items-center text-center"
         >
           <h1 ref={headRef} className="font-light text-[3vw] tracking-[-0.3px] leading-[3vw]">
             <em>We are a</em> <span>CREATIVE</span> <em>studio</em> <span>DEDICATED</span> <em>to</em> <span>CULTURAL</span>
@@ -294,10 +302,12 @@ const App = () => {
             </div>
           </div>
         </div>
+          <SVGanimation />
+        <div className="footer cursor-pointer flex items-center justify-center " onClick={handleTop}>
+          <h1 className="flex text-black text-[2vw] items-center"><BiArrowToTop /> BACK TO TOP</h1>
+        </div>
       </div>
-      <div className="footer cursor-pointer flex items-center justify-center " onClick={handleTop}>
-        <h1 className="flex text-black text-[2vw] items-center"><BiArrowToTop /> BACK TO TOP</h1>
-      </div>
+
     </div>
   );
 };

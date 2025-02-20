@@ -33,7 +33,7 @@ const SVGanimation = () => {
             <div
                 ref={page1}
                 id="page1"
-                className='w-full h-auto relative bg-pink-200'
+                className=' h-auto mx-auto relative bg-pink-900 flex items-center justify-center'
                 onMouseMove={handleMouseMove}
                 onMouseLeave={handleLeave}
             >
